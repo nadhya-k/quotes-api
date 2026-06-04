@@ -1,0 +1,6 @@
+fastapi==0.111.0        # the web framework — handles routing and HTTP
+uvicorn==0.29.0         # ASGI server that runs FastAPI
+psycopg2-binary==2.9.9      # PostgreSQL adapter — lets Python talk to Postgres
+pydantic==2.7.1         # data validation library — used by FastAPI automatically
+pydantic-settings==2.2.1        # loads .env file into Python settings object
+python-dotenv==1.0.1        # reads .env file into environment variables

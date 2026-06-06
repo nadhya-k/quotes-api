@@ -11,7 +11,7 @@ async def lifespan(app: FastAPI):
 
 
 app = FastAPI(
-    title:"Quotes API",
+    title="Quotes API",
     description="An insurance policy quote service - Python + FastAPI + PostgreSQL",
     version="1.0.0",
     lifespan=lifespan,

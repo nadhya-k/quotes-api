@@ -1,0 +1,15 @@
+services:
+  db:
+    image: postgres:16-alpine     # official PostgreSQL 16 image, alpine = small footprint
+    environment:
+      POSTGRES_USER: quotes_user    # match DATABASE_URL in .env
+      POSTGRES_PASSWORD: quotes_pass    # match DATABASE_URL in .env
+      POSTGRES_DB: quotes_db    # match DATABASE_URL in .env
+
+    ports:
+      - "5432:5432"     # host_port:container_port mapping to expose PostgreSQL on localhost:5432 so Python api can connect
+
+    volumes:
+      - postgres_data:/var/lib/postgresql/data    # named volume in database to persist between container re-starts, without which all data is lost every time you run docker compose down.
+volumes:
+  postgres_data: {}     # declares the named volume - Docker manages where this volume lives on the disk.
